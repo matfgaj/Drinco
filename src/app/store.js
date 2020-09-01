@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import drinks from "./drinks/duck/reducers";
+import display from "./displayedPage/duck/reducers";
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    drinks: drinks,
+    display: display,
   },
 });
