@@ -1,58 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import Search from "./features/Search/Search";
+import DrinksList from "./features/DrinksList/DrinksList";
+import AppHeader from "./features/AppHeader/AppHeader";
+import DisplayDrink from "./features/DisplayDrink/DisplayDrink";
 
-function App() {
+import "./App.css";
+import { connect } from "react-redux";
+
+function App(props) {
+  console.log(props.DisplayedPage.DisplayedPage);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div className="Wraper">
+          <AppHeader></AppHeader>
+          {props.DisplayedPage.DisplayedPage === "Search" && <Search></Search>}
+          {props.DisplayedPage.DisplayedPage === "List" && (
+            <DrinksList></DrinksList>
+          )}
+          {props.DisplayedPage.DisplayedPage === "Drink" && (
+            <DisplayDrink></DisplayDrink>
+          )}
+        </div>
     </div>
   );
 }
+const mapStateToProps = (state) => ({
+  DisplayedPage: state.display,
+});
 
-export default App;
+export default connect(mapStateToProps, {})(App);
