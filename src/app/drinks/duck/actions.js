@@ -10,9 +10,13 @@ const fetchDrinkSearch = (word) => ({
   word,
 });
 
-const add = (item) => ({
+const add = (drink) => ({
   type: types.ADD,
-  item,
+  drink,
+});
+const remove = (drink) => ({
+  type: types.REMOVE,
+  drink,
 });
 
 const reset = (item) => ({
@@ -20,4 +24,4 @@ const reset = (item) => ({
   item,
 });
 
-export default { add, reset, fetchDrinkSearch, drinkToDisplay };
+export default { add, remove, reset, fetchDrinkSearch, drinkToDisplay };
