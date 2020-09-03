@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
-import styles from "./Search.module.css";
+import "./Search.css";
 import SearchList from "../SearchList/SearchList";
 
 import { connect } from "react-redux";
 import actions from "../../app/drinks/duck/actions";
-
+import displayActions from "../../app/displayedPage/duck/actions";
 const Search = (props) => {
   const searchInput = useRef();
 
-  const DrinkInput = (event, dispatch) => {
+  const DrinkInput = (event) => {
     event.preventDefault();
 
     const search = searchInput.current.value;
@@ -20,20 +20,34 @@ const Search = (props) => {
     event.target.reset();
   };
 
+  const HandleRandomDrinkClick = (event) => {
+    event.preventDefault();
+
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
+      .then((res) => res.json())
+      .then((json) => props.drinkToDisplay(json.drinks[0]));
+
+    props.setDisplay("Drink");
+  };
+
   return (
     <>
       <form onSubmit={DrinkInput} action="">
         <input ref={searchInput} type="text" placeholder="drink name" />
         <button type="submit">Search</button>
+        <div onClick={HandleRandomDrinkClick} className="Search__divIcon">
+          <i className="fa fa-random Search__Icon"></i>
+        </div>
         <SearchList></SearchList>
       </form>
-      <ul>{}</ul>
     </>
   );
 };
 
 const MapDispatchToProps = (dispatch) => ({
   fetchDrinkSearch: (drink) => dispatch(actions.fetchDrinkSearch(drink)),
+  drinkToDisplay: (drink) => dispatch(actions.drinkToDisplay(drink)),
+  setDisplay: (drink) => dispatch(displayActions.setDisplay(drink)),
 });
 
 export default connect(null, MapDispatchToProps)(Search);

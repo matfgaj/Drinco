@@ -1,0 +1,11 @@
+.Search__Icon {
+  color: rgba(236, 117, 54, 1);
+  font-size: 2rem;
+}
+.Search__divIcon {
+  width: 2rem;
+  height: auto;
+  background-color: white;
+  border: white 5px solid;
+  border-radius: 50%;
+}
