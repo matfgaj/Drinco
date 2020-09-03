@@ -7,3 +7,13 @@
   height: 70%;
   width: auto;
 }
+
+.SearchList__Icon {
+  color: rgba(236, 117, 54, 1);
+  font-size: 2rem;
+}
+.SearchList__divIcon {
+  background-color: white;
+  border: white 5px solid;
+  border-radius: 50%;
+}

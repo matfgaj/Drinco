@@ -10,7 +10,20 @@ const SearchList = (props) => {
     props.drinkToDisplay(drink);
     props.setDisplay("Drink");
   };
-  const drinksList = props.searchedDrinks.searchedDrinks.drinks;
+
+  const drinksList = props.searchedDrinks.drinks;
+
+  const already = (drink) => {
+    let already = false;
+    props.Mydrinks.forEach((element) => {
+      if (element.idDrink === drink.idDrink) {
+        return (already = true);
+      }
+    });
+    return already
+      ? "fa fa-star SearchList__Icon"
+      : "fa fa-minus SearchList__Icon";
+  };
 
   if (drinksList !== undefined && drinksList !== null) {
     let listItems = drinksList.map((drink) => (
@@ -24,16 +37,25 @@ const SearchList = (props) => {
           src={drink.strDrinkThumb}
           alt="drinkphoto"
         />
+        <div className="SearchList__divIcon">
+          <i className={already(drink)}></i>
+        </div>
         <li className="SearchList__name">{drink.strDrink}</li>
       </div>
     ));
     return <ul>{listItems}</ul>;
-  } else {
-    return <ul></ul>;
+  }
+  if (drinksList === null) {
+    return <ul>try again</ul>;
+  }
+  if (drinksList === undefined) {
+    return <div></div>;
   }
 };
+
 const mapStateToProps = (state) => ({
-  searchedDrinks: state.drinks,
+  searchedDrinks: state.drinks.searchedDrinks,
+  Mydrinks: state.drinks.Mydrinks,
 });
 
 const MapDispatchToProps = (dispatch) => ({
