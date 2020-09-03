@@ -1,14 +1,11 @@
 import types from "./types";
+import MyDrinks from "./MyDrinks";
 
 const initialDrinks = {
   searchedDrinks: "",
   displayedDrink: "",
   listName: "Favourite",
-  Mydrinks: [
-    { id: 0, name: "margerita" },
-    { id: 1, name: "witchr" },
-    { id: 2, name: "chockolemonapllejuice" },
-  ],
+  Mydrinks: MyDrinks,
 };
 
 function drinksReducer(state = initialDrinks, action) {
@@ -26,7 +23,12 @@ function drinksReducer(state = initialDrinks, action) {
     case types.ADD:
       return {
         ...state,
-        drinks: [...state.drinks, action.drink],
+        Mydrinks: [...state.Mydrinks, action.drink],
+      };
+    case types.REMOVE:
+      return {
+        ...state,
+        Mydrinks: state.Mydrinks.filter((item) => action.drink !== item),
       };
     case types.RESET:
       return {
