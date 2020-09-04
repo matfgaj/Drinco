@@ -1,0 +1,19 @@
+.DrinkList__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.DrinkList__container * {
+  width: auto;
+  height: 30vh;
+  line-height: 30vh;
+  margin: 30px 60px;
+  color: white;
+}
+.fa.fa-minus-circle {
+  font-size: 3rem;
+}
+
+.fa.fa-minus-circle:hover {
+  color: black;
+}

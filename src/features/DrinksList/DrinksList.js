@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import actions from "../../app/drinks/duck/actions";
 import actionsDisplay from "../../app/displayedPage/duck/actions";
+import "./DrinksList.css";
 
 const DrinksList = (props) => {
   const HandleDeleteClick = (drink) => {
@@ -15,14 +16,13 @@ const DrinksList = (props) => {
     <ul>
       {props.Mydrinks.Mydrinks.map((drink) => {
         return (
-          <li key={drink.idDrink}>
-            <div>
-              <p onClick={() => HandleClick(drink)}> {drink.strDrink}</p>
-              <i
-                onClick={() => HandleDeleteClick(drink)}
-                className="fa fa-minus-circle"
-              ></i>
-            </div>
+          <li className="DrinkList__container" key={drink.idDrink}>
+            <img src={drink.strDrinkThumb} alt="" />
+            <p onClick={() => HandleClick(drink)}> {drink.strDrink}</p>
+            <i
+              onClick={() => HandleDeleteClick(drink)}
+              className="fa fa-minus-circle"
+            ></i>
           </li>
         );
       })}
