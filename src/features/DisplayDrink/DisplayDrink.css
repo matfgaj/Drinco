@@ -1,0 +1,35 @@
+.DisplayDrink__container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  height: 60vh;
+  margin: 40px;
+}
+.DisplayDrink__img {
+  height: 30vh;
+  width: auto;
+}
+.DisplayDrink__name {
+  color: white;
+}
+.DisplayDrink__textContainer {
+  color: white;
+  width: 60vw;
+}
+.DisplayDrink__textContainer * {
+  margin-top: 10px;
+}
+.DisplayDrink__star {
+  margin: 10px;
+  font-size: 2rem;
+}
+.DisplayDrink__star:hover {
+  color: gold;
+}
+
+.gold {
+  color: gold;
+}
+.white {
+  color: white;
+}
