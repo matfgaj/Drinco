@@ -1,11 +1,41 @@
 .Search__Icon {
-  color: rgba(236, 117, 54, 1);
+  color: white;
   font-size: 2rem;
 }
-.Search__divIcon {
-  width: 2rem;
-  height: auto;
+/* .Search__divIcon {
   background-color: white;
-  border: white 5px solid;
+  border: white 10px solid;
   border-radius: 50%;
+  height: auto;
+  width: 2px;
+} */
+.Search__input {
+  background-color: white;
+  border: white 2px solid;
+  border-radius: 5px;
+  font-weight: lighter;
+  padding: 2px 3px;
+  margin-right: 15px;
+}
+.Search__input:focus {
+  color: white;
+  background-color: black;
+}
+
+.Search__button {
+  background-color: white;
+  border: white 2px solid;
+  border-radius: 5px;
+  font-weight: lighter;
+  padding: 2px 3px;
+  margin-right: 15px;
+}
+
+.Search__button:hover {
+  color: white;
+  background-color: rgb(227, 25, 100);
+}
+
+.Search__textContainer {
+  margin-bottom: 30px;
 }

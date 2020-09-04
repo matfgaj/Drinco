@@ -32,11 +32,20 @@ const Search = (props) => {
 
   return (
     <>
-      <form onSubmit={DrinkInput} action="">
-        <input ref={searchInput} type="text" placeholder="drink name" />
-        <button type="submit">Search</button>
-        <div onClick={HandleRandomDrinkClick} className="Search__divIcon">
-          <i className="fa fa-random Search__Icon"></i>
+      <form className="Search__form" onSubmit={DrinkInput} action="">
+        <div className="Search__textContainer">
+          <input
+            className="Search__input"
+            ref={searchInput}
+            type="text"
+            placeholder="drink name"
+          />
+          <button className="Search__button" type="submit">
+            Search
+          </button>
+          <button onClick={HandleRandomDrinkClick} className="Search__button">
+            Random Drink *
+          </button>
         </div>
         <SearchList></SearchList>
       </form>
