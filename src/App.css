@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
 .App {
   min-height: 100vh;
   height: 100%;
@@ -7,6 +15,6 @@
   background: linear-gradient(
     180deg,
     rgba(236, 117, 54, 1) 0%,
-    rgba(227, 25, 100, 1) 100%
+    rgb(227, 25, 100) 100%
   );
 }
