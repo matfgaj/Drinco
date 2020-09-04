@@ -1,8 +1,8 @@
 import React from "react";
-
+import "./IngridientsList.css";
 const IngredientsList = (props) => {
   return (
-    <ul>
+    <ul className='IngredientsList__ul'>
       <div className="IngredientsList__Title">Ingredients</div>
       {props.Drink.strIngredient1 !== null? <li>{props.Drink.strIngredient1} {props.Drink.strMeasure1}</li> : null}
 	  {props.Drink.strIngredient2 !== null? <li>{props.Drink.strIngredient2} {props.Drink.strMeasure1}</li> : null}
