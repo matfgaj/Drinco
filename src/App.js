@@ -7,9 +7,11 @@ import DisplayDrink from "./features/DisplayDrink/DisplayDrink";
 import "./App.css";
 import { connect } from "react-redux";
 
-function App(props) {
-  console.log(props.DisplayedPage.DisplayedPage);
 
+
+function App(props) {
+
+	
   return (
     <div className="App">
       <div className="Wraper">
