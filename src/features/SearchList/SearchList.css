@@ -1,19 +1,24 @@
-.SearchList__element {
-  height: 30vh;
-  width: auto;
+.SearchList__container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.SearchList__element {
+  border: solid 1px gray;
+  border-radius: 10px;
+  height: 30vh;
+  width: 30vh;
+  margin: 20px;
+}
+.SearchList__element:hover {
+  border-color: white;
+}
 .SearchList__img {
   height: 70%;
   width: auto;
+  margin-top: 10%;
 }
 
 .SearchList__Icon {
-  color: rgba(236, 117, 54, 1);
   font-size: 2rem;
-}
-.SearchList__divIcon {
-  background-color: white;
-  border: white 5px solid;
-  border-radius: 50%;
 }

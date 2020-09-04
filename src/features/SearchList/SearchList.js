@@ -21,8 +21,8 @@ const SearchList = (props) => {
       }
     });
     return already
-      ? "fa fa-star SearchList__Icon"
-      : "fa fa-minus SearchList__Icon";
+      ? "fa fa-star SearchList__Icon gold"
+      : "fa fa-minus SearchList__Icon white";
   };
 
   if (drinksList !== undefined && drinksList !== null) {
@@ -40,10 +40,10 @@ const SearchList = (props) => {
         <div className="SearchList__divIcon">
           <i className={already(drink)}></i>
         </div>
-        <li className="SearchList__name">{drink.strDrink}</li>
+        <div className="SearchList__name">{drink.strDrink}</div>
       </div>
     ));
-    return <ul>{listItems}</ul>;
+    return <div className="SearchList__container">{listItems}</div>;
   }
   if (drinksList === null) {
     return <ul>try again</ul>;
