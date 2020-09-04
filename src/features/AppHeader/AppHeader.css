@@ -12,8 +12,15 @@
   top: 20%;
   transform: translate(-50%, -50%);
   background-color: white;
-  border: white 5px solid;
+  border: white 10px solid;
   border-radius: 50%;
+}
+.divIcon:hover {
+  background-color: rgb(227, 25, 100);
+  border-color: rgb(227, 25, 100);
+}
+.divIcon:hover .headerIcon {
+  color: white;
 }
 
 .appHeader__search {
@@ -21,4 +28,17 @@
 }
 .appHeader__list {
   left: 80%;
+}
+
+.appHeader__divLogo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 25vh;
+  transform: translate(-50%, -50%);
+}
+
+.appHeader__Logo {
+  width: auto;
+  height: 100%;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import actions from "../../app/displayedPage/duck/actions";
-
 import "./AppHeader.css";
+import logo from "./img/logo.png";
 
 const AppHeader = (props) => {
   const changeDisplay = (word) => {
@@ -26,6 +26,9 @@ const AppHeader = (props) => {
         className="divIcon appHeader__list"
       >
         <i className="fa fa-list headerIcon "></i>
+      </div>
+      <div className="appHeader__divLogo">
+        <img className="appHeader__Logo" src={logo} alt="logo" />
       </div>
     </header>
   );
