@@ -16,4 +16,6 @@
 
 .fa.fa-minus-circle:hover {
   color: black;
+  cursor: pointer;
+
 }

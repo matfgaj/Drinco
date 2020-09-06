@@ -18,9 +18,11 @@
 .divIcon:hover {
   background-color: rgb(227, 25, 100);
   border-color: rgb(227, 25, 100);
+  cursor: pointer;
 }
 .divIcon:hover .headerIcon {
   color: white;
+  cursor: pointer;
 }
 
 .appHeader__search {

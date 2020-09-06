@@ -25,6 +25,7 @@
 }
 .DisplayDrink__star:hover {
   color: gold;
+  cursor: pointer;
 }
 
 .gold {

@@ -32,6 +32,7 @@
 }
 
 .Search__button:hover {
+  cursor: pointer;
   color: white;
   background-color: rgb(227, 25, 100);
 }

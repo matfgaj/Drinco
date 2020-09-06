@@ -12,9 +12,10 @@
 }
 .SearchList__element:hover {
   border-color: white;
+  cursor: pointer;
 }
 .SearchList__img {
-  height: 70%;
+  height: 50%;
   width: auto;
   margin-top: 10%;
 }
